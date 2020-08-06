@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css2?family=Cabin&display=swap);
+
+h1 {
+  font-family: 'Courier Prime', monospace;
+  font-size: 39px;
+}
+
+h2 {
+  font-family: 'Courier Prime', monospace;
+  font-size: 32px;
+}
+
+p {
+  font-family: 'Courier Prime', monospace;
+  font-size: 16px;
+}
+
+button {
+  height: 60px;
+  width: 220px;
+  background-color: #ffffff;
+  border: 1px #979797 solid;
+  font-family: 'Courier Prime', monospace;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 20px;
+}
+
+.wrapper-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.home-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-title {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 700px;
+}
+
+.home-text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 700px;
+  margin: 10px;
+}
+
+.home-button {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+/* Game Page */
+
+.wrapper-game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.game-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-quote {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 700px;
+  padding: 20px;
+  border: 1px #979797 solid;
+  font-family: 'Courier Prime', monospace;
+  font-size: 32px;
+}
+
+.game-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.game-restart {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  height: 100px;
+  padding-top: 30px;
+}
