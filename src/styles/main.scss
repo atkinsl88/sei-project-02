@@ -26,6 +26,32 @@ button {
   font-size: 20px;
 }
 
+.wrong {
+  background-color: red;
+}
+
+.correct {
+  background-color: green;
+}
+
+.win {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color :#ffffff;
+  margin-top: 110px;
+  position: absolute;
+  border: 1px #979797 solid;
+  height: 200px;
+  width: 700px;
+}
+
+.win-buttons {
+  display: none;
+}
+
+// Home Page
+
 .wrapper-home {
   display: flex;
   flex-direction: column;
@@ -55,7 +81,7 @@ button {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 700px;
+  max-width: 700px;
   margin: 10px;
 }
 
@@ -81,6 +107,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 40px;
 }
 
 .game-quote {
@@ -89,7 +116,7 @@ button {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 700px;
+  max-width: 700px;
   padding: 20px;
   border: 1px #979797 solid;
   font-family: 'Courier Prime', monospace;
