@@ -41,24 +41,17 @@ class GamePage extends React.Component {
   }
 
   handleGuess = (e) => {
-    if (!this.endGame()) {
-      const { trump, correctGuesses, totalGuesses } = this.state
-      const answer = trump ? 'trump' : 'kanye'
-      // console.log(this.state)
-      return this.setState({ 
-        totalGuesses: totalGuesses + 1, 
-        trump: null, 
-        kanye: null,
-        correctGuesses: answer === e.target.value ? correctGuesses + 1 : correctGuesses,
-        isCorrectTrump: answer === 'trump' ? true : false,
-        isCorrectKanye: answer === 'kanye' ? true : false
-      }, this.getData) 
-    }
-    return this.setState({ score: 'Finish game' })
-  }
-
-  displayScore = () => {
-    this.setState({ trump: null, kanye: null, score: `Congrats, you scored: ${this.state.correctGuesses} / 10` })
+    const { trump, correctGuesses, totalGuesses } = this.state
+    const answer = trump ? 'trump' : 'kanye'
+    // console.log(this.state)
+    return this.setState({ 
+      totalGuesses: totalGuesses + 1, 
+      trump: null, 
+      kanye: null,
+      correctGuesses: answer === e.target.value ? correctGuesses + 1 : correctGuesses,
+      isCorrectTrump: answer === 'trump' ? true : false,
+      isCorrectKanye: answer === 'kanye' ? true : false
+    }, this.getData)
   }
 
   endGame = () => {
@@ -66,30 +59,28 @@ class GamePage extends React.Component {
   }
 
   checkQuote = (newQuote, newArray) => {
-    // for (let i = 0; i < length; i++) { 
-    //   console.log('This is running')
-    //   return newQuote === newArray[i]
-    // }
     return newArray.some(quote => {
       return quote === newQuote
     })
   }
 
   render() {
-    const { trump, kanye, totalGuesses, correctGuesses, isCorrectTrump } = this.state
+    const { trump, kanye, totalGuesses, correctGuesses, isCorrectTrump, isCorrectKanye } = this.state
     return (
       <section>
         <div className="wrapper-game">
           <div className="game-image">
             <img src={image} alt="logo" />
           </div>
-          <div className="game-quote">
+          <div>
             {totalGuesses < 10 ? 
               <>
-                <p>{kanye}{trump}</p>
+                <div className="game-quote">
+                  <p>{kanye}{trump}</p>
+                </div>
                 <div className="game-buttons">
                   <button onClick={this.handleGuess} className={`${isCorrectTrump ? 'correct' : ''}`} value="trump">Trump</button>
-                  <button onClick={this.handleGuess} className={`${!isCorrectTrump ? 'correct' : ''}`} value="kanye">Kanye</button>
+                  <button onClick={this.handleGuess} className={`${isCorrectKanye ? 'correct' : ''}`} value="kanye">Kanye</button>
                 </div>
               </>
               :
