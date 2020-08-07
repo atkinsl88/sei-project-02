@@ -11,7 +11,6 @@ class GamePage extends React.Component {
     quoteArray: [],
     totalGuesses: 0,
     correctGuesses: 0,
-    score: null,
     isCorrectTrump: false,
     isCorrectKanye: false
   }
@@ -43,7 +42,6 @@ class GamePage extends React.Component {
   handleGuess = (e) => {
     const { trump, correctGuesses, totalGuesses } = this.state
     const answer = trump ? 'trump' : 'kanye'
-    // console.log(this.state)
     return this.setState({ 
       totalGuesses: totalGuesses + 1, 
       trump: null, 
@@ -54,14 +52,19 @@ class GamePage extends React.Component {
     }, this.getData)
   }
 
-  endGame = () => {
-    return this.state.totalGuesses === 10
-  }
-
   checkQuote = (newQuote, newArray) => {
     return newArray.some(quote => {
       return quote === newQuote
     })
+  }
+
+  generateInsult = (correctGuesses) => {
+    if (correctGuesses > 7) {
+      return 'Takes a Dicktator to know a Dicktator'
+    } else if (correctGuesses > 3) {
+      return 'Not bad, you could know your Dicktators better'
+    }
+    return 'You do not know your Dicktators, you need to get onto Twitter more'
   }
 
   render() {
@@ -84,7 +87,9 @@ class GamePage extends React.Component {
                 </div>
               </>
               :
-              <p>{correctGuesses}/{totalGuesses}</p>
+              <div className="game-quote">
+                <p> {this.generateInsult(correctGuesses)} {correctGuesses}/{totalGuesses}</p>
+              </div>
             }
           </div>
           <div className="game-restart">
