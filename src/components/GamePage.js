@@ -76,9 +76,7 @@ class GamePage extends React.Component {
   }
 
   render() {
-    const { trump } = this.state
-    const { kanye } = this.state
-    const { score } = this.state
+    const { trump, kanye, totalGuesses, correctGuesses, isCorrectTrump } = this.state
     return (
       <section>
         <div className="wrapper-game">
@@ -86,15 +84,17 @@ class GamePage extends React.Component {
             <img src={image} alt="logo" />
           </div>
           <div className="game-quote">
-            { kanye }
-            { trump }
-            { score }
-          </div>
-          <div className="game-buttons">
-            <div className={ `${this.state.score ? 'win-buttons' : ''}` }>
-              <button onClick={this.handleGuess} className={`${this.state.isCorrectTrump ? 'correct' : ''}`} value="trump">Trump</button>
-              <button onClick={this.handleGuess} className={`${this.state.isCorrectKanye ? 'correct' : ''}`} value="kanye">Kanye</button>
-            </div>
+            {totalGuesses < 10 ? 
+              <>
+                <p>{kanye}{trump}</p>
+                <div className="game-buttons">
+                  <button onClick={this.handleGuess} className={`${isCorrectTrump ? 'correct' : ''}`} value="trump">Trump</button>
+                  <button onClick={this.handleGuess} className={`${!isCorrectTrump ? 'correct' : ''}`} value="kanye">Kanye</button>
+                </div>
+              </>
+              :
+              <p>{correctGuesses}/{totalGuesses}</p>
+            }
           </div>
           <div className="game-restart">
             <Link to={'/'}><button>Restart</button></Link>
