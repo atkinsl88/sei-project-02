@@ -12,7 +12,9 @@ const Home = () => (
         <h1>Trump vs. Kanye</h1>
       </div>
       <div className="home-text">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porta commodo elementum. Fusce hendrerit interdum mauris, et gravida sem vestibulum aliquam. Phasellus aliquam, augue ac tempus bibendum, urna odio aliquet nunc, id mattis erat ipsum et elit.</p>
+        <p>Trump and Kanye are notorious for having big mouths, so we thought it would be good to see how easy it would be to differentiate between these two ‘great minds’. Hit ‘Start’ to see how you get out of 10.</p>
+        <p><span className="disclaimer">Disclaimer:</span> These quotes are offensive.</p>
+        <p>Lots of Love,<br />Dicktatorship.</p>
       </div>
       <div className="home-button">
         <Link to={'/game'}><button>Start</button></Link>
