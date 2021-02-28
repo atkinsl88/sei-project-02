@@ -1,9 +1,2 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) GA London React Template
-
-`yarn start` to run the development server
-
-`yarn build` to create a build directory
-
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+# Dicktatorship
+External API driven question game whereby a random question served from one of two API's is called and surfaces on the page. The user is required to guess the correct answer and at the end your score is totalled up.
